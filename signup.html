@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Login/Sign Up Page</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      background-color: #f4f4f4;
+      margin: 0;
+      padding: 0;
+      display: flex;
+      align-items: center;
+      height: 100vh;
+    }
+
+    .container {
+      background-color: #110101;
+      padding: 20px;
+      border-radius: 8px;
+      box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+      width: 300px;
+      text-align: center;
+    }
+    .tab {
+      display: flex;
+      margin-bottom: 20px;
+    }
+
+    .tab button {
+      flex: 1;
+      padding: 10px;
+      cursor: pointer;
+      border: none;
+      outline: none;
+      background-color: #ddd;
+      border-radius: 4px 4px 0 0;
+      font-size: 16px;
+    }
+
+    .tab button:hover {
+      background-color: #ccc;
+    }
+
+    .tab button.active {
+      background-color: #fff;
+    }
+
+    .content {
+      display: none;
+    }
+
+    #loginContent, #signupContent {
+      display: block;
+    }
+
+    input {
+      width: 100%;
+      padding: 10px;
+      margin: 8px 0;
+      box-sizing: border-box;
+    }
+
+    button {
+      background-color: #77ee7b;
+      color: #fff;
+      padding: 10px;
+      border: none;
+      border-radius: 4px;
+      cursor: pointer;
+      width: 100%;
+    }
+
+    button:hover {
+      background-color: #45a049;
+    }
+  </style>
+</head>
+<body>
+
+<div class="container">
+  <div class="tab">
+    <button class="tablinks active" onclick="openTab(event, 'loginContent')">Login</button>
+    <button class="tablinks" onclick="openTab(event, 'signupContent')">Sign Up</button>
+  </div>
+
+  <div id="loginContent" class="content">
+    <form>
+      <input type="text" placeholder="Username" name="username" required>
+      <input type="password" placeholder="Password" name="password" required>
+      <button type="submit">Login</button>
+    </form>
+  </div>
+
+  <div id="signupContent" class="content">
+    <form>
+      <input type="text" placeholder="Username" name="username" required>
+      <input type="email" placeholder="Email" name="email" required>
+      <input type="password" placeholder="Password" name="password" required>
+      <button type="submit">Sign Up</button>
+    </form>
+  </div>
+</div>
+
+<script>
+  function openTab(evt, tabName) {
+    var i, content, tablinks;
+    content = document.getElementsByClassName("content");
+    for (i = 0; i < content.length; i++) {
+      content[i].style.display = "none";
+    }
+    tablinks = document.getElementsByClassName("tablinks");
+    for (i = 0; i < tablinks.length; i++) {
+      tablinks[i].className = tablinks[i].className.replace(" active", "");
+    }
+    document.getElementById(tabName).style.display = "block";
+    evt.currentTarget.className += " active";
+  }
+</script>
+
+</body>
+</html>
